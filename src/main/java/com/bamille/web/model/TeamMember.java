@@ -10,12 +10,23 @@ public class TeamMember {
 	String lastName;
 	@JsonView(Views.Public.class)
 	String presentation;
+	@JsonView(Views.Public.class)	
+	String imageLink;
+	
+	public String getImageLink() {
+		return imageLink;
+	}
 
-	public TeamMember(String firstName, String lastName, String presentation) {
+	public void setImageLink(String imageLink) {
+		this.imageLink = imageLink;
+	}
+
+	public TeamMember(String firstName, String lastName, String presentation, String imageLink) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.presentation = presentation;
+		this.imageLink = imageLink;
 	}
 
 	public String getFirstName() {
@@ -42,9 +53,4 @@ public class TeamMember {
 		this.presentation = presentation;
 	}
 
-	
-//	@Override
-//	public String toString() {
-//		return "TeamMember [firstName=" + firstName + ", lastName=" + lastName + "]";
-//	}
 }

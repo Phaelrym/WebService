@@ -6,6 +6,7 @@
 <head>
 <c:url var="home" value="/" scope="request" />
 <spring:url value="/resources/core/img/favicon.ico" var="favicon" />
+<spring:url value="/resources/core/css/hello.css" var="coreCss" />
 <spring:url value="/resources/core/css/bootstrap.min.css"
 	var="bootstrapCss" />
 <spring:url value="/resources/core/js/jquery-3.1.1.min.js"
@@ -25,7 +26,7 @@
 
 <div class="container">
 	<div>
-		<h1>Team Member</h1>
+		<h1 class="text-center">Team Member</h1>
 		<br>
 		<div id="feedbackFullTeam"></div>
 		<div id="feedback"></div>
@@ -126,13 +127,18 @@
 	}
 
 	function displayResultSearchFullTeam(data) {
+
 		var finalResult = "<div class=\"row\">";
 		$.each(data.result, function(i, item) {
-			finalResult += "<div class=\"col-md-4 text-center\">"
-					+ item.firstName + item.lastName + item.presentation
-					+ "</div>";
+			finalResult += "<div class=\"col-sm-6 col-md-3\">"
+					+ "<div class=\"thumbnail\">"
+					+ "<img src=\""+item.imageLink+"\">"
+					+ "<div class=\"caption text-center\">" + "<h4>" + item.firstName + " "
+					+ item.lastName + "</h4>" + "<p>"+item.presentation+"</p>"
+					+ "</div></div></div>";
 		});
 		finalResult += "</div>";
+
 		$('#feedbackFullTeam').html(finalResult);
 	}
 </script>

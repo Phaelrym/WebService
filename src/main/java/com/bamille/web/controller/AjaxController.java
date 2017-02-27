@@ -92,12 +92,18 @@ public class AjaxController {
 	private void initData() {
 		teamMembers = new ArrayList<TeamMember>();
 
-		TeamMember teamMember1 = new TeamMember("firstName1", "lastName1", "the presentation of firstname1");
-		TeamMember teamMember2 = new TeamMember("firstName2", "lastName2", "the presentation of firstname2");
-		TeamMember teamMember3 = new TeamMember("firstName3", "lastName3", "the presentation of firstname3");
+		TeamMember teamMember1 = new TeamMember("firstName1", "lastName1", "the presentation of firstname1",
+				"/webservice/resources/core/img/firstName1Img.png");
+		TeamMember teamMember2 = new TeamMember("firstName2", "lastName2", "the presentation of firstname2",
+				"/webservice/resources/core/img/firstName2Img.png");
+		TeamMember teamMember3 = new TeamMember("firstName3", "lastName3", "the presentation of firstname3",
+				"/webservice/resources/core/img/firstName3Img.png");
+		TeamMember teamMember4 = new TeamMember("firstName4", "lastName4", "the presentation of firstname4",
+				"/webservice/resources/core/img/firstName4Img.png");
 		teamMembers.add(teamMember1);
 		teamMembers.add(teamMember2);
 		teamMembers.add(teamMember3);
+		teamMembers.add(teamMember4);
 
 	}
 }
